@@ -68,7 +68,21 @@ public class OrderAction {
         ctx.setRequestScopedVar("marriedTypes", MarriedType.values());
         ctx.setRequestScopedVar("jobTypes", JobType.values());
         ctx.setRequestScopedVar("treatedTypes", TreatedType.values());
+        UserForm form = ctx.getRequestScopedVar("form");
+        InsuranceOrder insOrder = SessionUtil.get(ctx, "insOrder");
 
+        // treatLadyは女性しか加入できないため、性別選択チェックを行う。
+        if (insOrder.getInsuranceType().equals("treatLady") && form.getGender().equals("male")) {
+            Message message = ValidationUtil.createMessageForProperty("gender", "tiscon4.order.inputUser.error.gender");
+            throw new ApplicationException(message);
+        }
+
+        //UniversalDao.findAllBySqlFile(ZipcodeDto.class, "ZIPCODE_LIST");
+
+        BeanUtil.copy(form, insOrder);
+
+        //ctx.setRequestScopedVar("form", new JobForm());
+        ctx.setRequestScopedVar("industryTypes", IndustryType.values());
         return new HttpResponse("user.html");
     }
 
@@ -79,7 +93,7 @@ public class OrderAction {
      * @param ctx HTTPリクエストの処理に関連するサーバ側の情報
      * @return HTTPレスポンス
      */
-    @InjectForm(form = UserForm.class)
+    /*@InjectForm(form = JobForm.class)
     @OnError(type = ApplicationException.class, path = "forward://inputUserForError")
     @UseToken
     public HttpResponse inputJob(HttpRequest req, ExecutionContext ctx) {
@@ -100,7 +114,7 @@ public class OrderAction {
         ctx.setRequestScopedVar("industryTypes", IndustryType.values());
 
         return new HttpResponse("job.html");
-    }
+    }*/
 
     /**
      * 本人登録画面に入力エラーがあった時に再表示する。
@@ -114,7 +128,7 @@ public class OrderAction {
         ctx.setRequestScopedVar("marriedTypes", MarriedType.values());
         ctx.setRequestScopedVar("jobTypes", JobType.values());
         ctx.setRequestScopedVar("treatedTypes", TreatedType.values());
-
+        ctx.setRequestScopedVar("industryTypes", IndustryType.values());
         return new HttpResponse("user.html");
     }
 
@@ -125,11 +139,11 @@ public class OrderAction {
      * @param ctx HTTPリクエストの処理に関連するサーバ側の情報
      * @return HTTPレスポンス
      */
-    @InjectForm(form = JobForm.class)
+    @InjectForm(form = UserForm.class)
     @OnError(type = ApplicationException.class, path = "forward://inputJobForError")
     @OnDoubleSubmission(path = "doubleSubmissionError.html")
     public HttpResponse create(HttpRequest req, ExecutionContext ctx) {
-        JobForm form = ctx.getRequestScopedVar("form");
+        UserForm form = ctx.getRequestScopedVar("form");
         InsuranceOrder insOrder = SessionUtil.get(ctx, "insOrder");
 
         BeanUtil.copy(form, insOrder);
@@ -146,12 +160,12 @@ public class OrderAction {
      * @param ctx HTTPリクエストの処理に関連するサーバ側の情報
      * @return HTTPレスポンス
      */
-    @UseToken
+   /* @UseToken
     public HttpResponse inputJobForError(HttpRequest req, ExecutionContext ctx) {
         ctx.setRequestScopedVar("industryTypes", IndustryType.values());
 
         return new HttpResponse("job.html");
-    }
+    }*/
 
     /**
      * 完了ページを表示する。

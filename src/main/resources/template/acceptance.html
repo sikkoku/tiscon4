@@ -41,10 +41,7 @@
                             <ol class="ui list">
                                 <li value="●">過去5年以内に、以下の病気で7日間以上にわたる医師の診察・検査・治療・投薬をうけていないこと。</li>
                                 <ol>
-                                    <li value="－">がん</li>
-                                    <li value="－">急性心筋梗塞</li>
-                                    <li value="－">脳卒中</li>
-                                    <li value="－">糖尿病</li>
+                                    <li value="－">がん、急性心筋梗塞、脳卒中、糖尿病</li>
                                     <li value="－" th:if="${insOrder.insuranceType.equals('treatLady')}">子宮外妊娠</li>
                                     <li value="－" th:if="${insOrder.insuranceType.equals('treatLady')}">子宮筋腫</li>
                                 </ol>
