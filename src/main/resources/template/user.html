@@ -40,7 +40,7 @@
                             <tr>
                                 <td>
                                     <label>お名前（漢字）</label>
-                                    <p style="color:red;">＊</p>
+                                    <label style="color:red;">＊</label>
                                 </td>
                                 <td>
                                     <p>例：ＴＩＳ　太郎</p>
@@ -55,7 +55,7 @@
                             <tr>
                                 <td style="white-space: nowrap;">
                                     <label>お名前（カタカナ）</label>
-                                    <p style="color:red;">＊</p>
+                                    <label style="color:red;">＊</label>
                                 </td>
                                 <td>
                                     <p>例：ティーアイエス　タロウ</p>
@@ -70,7 +70,7 @@
                             <tr>
                                 <td>
                                     <label>お名前（ローマ字）</label>
-                                    <p style="color:red;">＊</p>
+                                    <label style="color:red;">＊</label>
                                 </td>
                                 <td>
                                     <p>例：TIS TAROU</p>
@@ -85,7 +85,7 @@
                             <tr>
                                 <td>
                                     <label>性別</label>
-                                    <p style="color:red;">＊</p>
+                                    <label style="color:red;">＊</label>
                                 </td>
                                 <td>
                                     <div th:each="item : ${genderTypes}" class="field"
@@ -104,7 +104,7 @@
                             <tr>
                                 <td>
                                     <label>生年月日（半角）</label>
-                                    <p style="color:red;">＊</p>
+                                    <label style="color:red;">＊</label>
                                 </td>
                                 <td>
                                     <p>例：1990/01/01</p>
@@ -119,7 +119,7 @@
                             <tr>
                                 <td>
                                     <label>郵便番号（半角）</label>
-                                    <p style="color:red;">＊</p>
+                                    <label style="color:red;">＊</label>
                                 </td>
                                 <td>
                                     <p>例：123-4567</p>
@@ -134,7 +134,7 @@
                             <tr>
                                 <td>
                                     <label>ご住所（全角）</label>
-                                    <p style="color:red;">＊</p>
+                                    <label style="color:red;">＊</label>
                                 </td>
                                 <td>
                                     <p>例：東京都新宿区西新宿８－１７－１</p>
@@ -149,7 +149,7 @@
                             <tr>
                                 <td>
                                     <label>自宅電話番号（半角）</label>
-                                    <p style="color:red;">＊</p>
+                                    <label style="color:red;">＊</label>
                                 </td>
                                 <td>
                                     <p>例：00-1111-2222</p>
@@ -164,7 +164,7 @@
                             <tr>
                                 <td>
                                     <label>携帯電話番号（半角）</label>
-                                    <p style="color:red;">＊</p>
+                                    <label style="color:red;">＊</label>
                                 </td>
                                 <td>
                                     <p>例：080-0000-0000</p>
@@ -181,7 +181,7 @@
                             <tr>
                                 <td>
                                     <label>メールアドレス（半角）</label>
-                                    <p style="color:red;">＊</p>
+                                    <label style="color:red;">＊</label>
                                 </td>
                                 <td>
                                     <p>例：tiscon@example.com</p>
@@ -196,7 +196,7 @@
                             <tr>
                                 <td>
                                     <label>配偶者有無</label>
-                                    <p style="color:red;">＊</p>
+                                    <label style="color:red;">＊</label>
                                 </td>
                                 <td>
                                     <div th:each="item : ${marriedTypes}" class="field"
@@ -213,7 +213,7 @@
                             <tr>
                                 <td>
                                     <label>昨年の所得（半角）</label>
-                                    <p style="color:red;">＊</p>
+                                    <label style="color:red;">＊</label>
                                 </td>
                                 <td>
                                     <div class="field" th:classappend="${errors.hasError('income')} ? 'error'">
@@ -228,7 +228,7 @@
                             <tr>
                                 <td>
                                     <label>ご職業</label>
-                                    <p style="color:red;">＊</p></td>
+                                    <label style="color:red;">＊</label></td>
                                 <td>
                                     <div th:each="item : ${jobTypes}" class="field"
                                          th:classappend="${errors.hasError('job')} ? 'error'">
@@ -260,7 +260,7 @@
                             <tr>
                                 <td>
                                     <label>過去5年以内に、病気やケガで7日間以上にわたって医師の診察・検査・治療・投薬をうけたことがありますか</label>
-                                    <p style="color:red;">＊</p>
+                                    <label style="color:red;">＊</label>
                                 </td>
                                 <td>
                                     <div th:each="item : ${treatedTypes}" class="field"
