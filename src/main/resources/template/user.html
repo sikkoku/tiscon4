@@ -45,14 +45,21 @@
                                 </td>
                                 <td>
                                     <p>例：ＴＩＳ　太郎</p>
-                                    <div class="field" th:classappend="${errors.hasError('kanjiName')} ? 'error'">
-                                        <input type="text" name="kanjiName" th:value="${form.kanjiName}"/>
-                                        <p th:if="${errors.hasError('kanjiName')}"
-                                           th:text="${errors.getMessage('kanjiName')}" class="error-message">
-                                        </p>
+                                    <div class="two fields">
+                                        <div class="field" th:classappend="${errors.hasError('kanjiName')} ? 'error'">
+                                            <input type="text" name="kanjiName" th:value="${form.kanjiName}"/>
+                                        </div>
+                                        <div class="field" th:classappend="${errors.hasError('kanjiName')} ? 'error'">
+                                            <input type="text" name="kanjiName" th:value="${form.kanjiName}"/>
+                                            <p th:if="${errors.hasError('kanjiName')}"
+                                               th:text="${errors.getMessage('kanjiName')}" class="error-message">
+                                            </p>
+                                        </div>
                                     </div>
                                 </td>
                             </tr>
+
+
                             <tr>
                                 <td style="white-space: nowrap;">
                                     <label>お名前（カタカナ）</label>
@@ -60,12 +67,20 @@
                                 </td>
                                 <td>
                                     <p>例：ティーアイエス　タロウ</p>
-                                    <div class="field" th:classappend="${errors.hasError('kanaName')} ? 'error'">
-                                        <input type="text" name="kanaName" th:value="${form.kanaName}"/>
-                                        <p th:if="${errors.hasError('kanaName')}"
-                                           th:text="${errors.getMessage('kanaName')}" class="error-message">
-                                        </p>
-                                    </div>
+                                        <div class="two fields">
+                                            <div class="field" th:classappend="${errors.hasError('kanaName')} ? 'error'">
+                                                <input type="text" name="kanaName" th:value="${form.kanaName}"/>
+                                                <p th:if="${errors.hasError('kanaName')}"
+                                                th:text="${errors.getMessage('kanaName')}" class="error-message">
+                                                </p>
+                                            </div>
+                                            <div class="field" th:classappend="${errors.hasError('kanaName')} ? 'error'">
+                                                <input type="text" name="kanaName" th:value="${form.kanaName}"/>
+                                                <p th:if="${errors.hasError('kanaName')}"
+                                                   th:text="${errors.getMessage('kanaName')}" class="error-message">
+                                                </p>
+                                            </div>
+                                        </div>
                                 </td>
                             </tr>
                             <tr>
@@ -109,8 +124,10 @@
                                 </td>
                                 <td>
                                     <p>例：1990年01月01日</p>
-                                    <div class="field" th:classappend="${errors.hasError('dateOfBirth')} ? 'error'">
-                                        <select name="seleect" size="1">
+                                    <div th:classappend="${errors.hasError('dateOfBirth')} ? 'error'">
+                                        <div class="field">
+                                            年
+                                        <select name="select" >
                                             <option value="">--</option>
                                             <option value="1900">1900</option>
                                             <option value="1901">1901</option>
@@ -234,7 +251,9 @@
                                             <option value="2019">2019</option>
                                             <option value="2020">2020</option>
                                         </select>
-                                        年
+                                        </div>
+                                        <div class="field">
+                                            月
                                         <SELECT name="month">
                                             <option value="">--</option>
                                             <option value="1">1</option>
@@ -250,7 +269,10 @@
                                             <option value="11">11</option>
                                             <option value="12">12</option>
                                         </SELECT>
-                                        月
+                                        </div>
+
+                                        <div class="field">
+                                            日
                                         <SELECT name="day" >
                                             <option value="">--</option>
                                             <option value="1">1</option>
@@ -285,7 +307,8 @@
                                             <option value="30">30</option>
                                             <option value="31">31</option>
                                         </select>
-                                        日
+                                        </div>
+
                                         <p th:if="${errors.hasError('dateOfBirth')}"
                                            th:text="${errors.getMessage('dateOfBirth')}" class="error-message">
                                         </p>
