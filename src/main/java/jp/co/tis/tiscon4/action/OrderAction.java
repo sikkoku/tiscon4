@@ -72,10 +72,10 @@ public class OrderAction {
         InsuranceOrder insOrder = SessionUtil.get(ctx, "insOrder");
 
         // treatLadyは女性しか加入できないため、性別選択チェックを行う。
-        if (insOrder.getInsuranceType().equals("treatLady") && form.getGender().equals("male")) {
+        /*if (insOrder.getInsuranceType().equals("treatLady") && form.getGender().equals("male")) {
             Message message = ValidationUtil.createMessageForProperty("gender", "tiscon4.order.inputUser.error.gender");
             throw new ApplicationException(message);
-        }
+        }*/
 
         //UniversalDao.findAllBySqlFile(ZipcodeDto.class, "ZIPCODE_LIST");
 
