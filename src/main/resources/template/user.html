@@ -70,20 +70,14 @@
                                 </td>
                                 <td>
                                     <p>例：ティーアイエス　タロウ</p>
-                                        <div class="two fields">
+
                                             <div class="field" th:classappend="${errors.hasError('kanaName')} ? 'error'">
                                                 <input type="text" name="kanaName" th:value="${form.kanaName}"/>
                                                 <p th:if="${errors.hasError('kanaName')}"
                                                 th:text="${errors.getMessage('kanaName')}" class="error-message">
                                                 </p>
                                             </div>
-                                            <div class="field" th:classappend="${errors.hasError('kanaName')} ? 'error'">
-                                                <input type="text" name="kanaName" th:value="${form.kanaName}"/>
-                                                <p th:if="${errors.hasError('kanaName')}"
-                                                   th:text="${errors.getMessage('kanaName')}" class="error-message">
-                                                </p>
-                                            </div>
-                                        </div>
+
                                 </td>
                             </tr>
                             <tr>

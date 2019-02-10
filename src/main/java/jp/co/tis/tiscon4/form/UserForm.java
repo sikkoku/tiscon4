@@ -18,6 +18,10 @@ public class UserForm implements Serializable {
     @Domain("kanjiName")
     private String kanjiName;
 
+    @Required
+    @Domain("kanjiName")
+    private String kanjiName1;
+
     /** カナ氏名 */
     @Required
     @Domain("kanaName")
@@ -95,8 +99,16 @@ public class UserForm implements Serializable {
         return kanjiName;
     }
 
+    public String getKanjiName1() {
+        return kanjiName1;
+    }
+
     public void setKanjiName(String kanjiName) {
         this.kanjiName = kanjiName;
+    }
+
+    public void setKanjiName1(String kanjiName1) {
+        this.kanjiName1 = kanjiName1;
     }
 
     public String getKanaName() {
