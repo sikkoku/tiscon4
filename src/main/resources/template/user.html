@@ -30,7 +30,7 @@
                 <div class="user-block">
                     <h1 class="ui aligned header teal">お申込み情報</h1>
 
-                    <form class="ui form" method="post" action="/action/order/inputJob">
+                    <form class="ui form" method="post" action="/action/order/completed">
 
                         <div class="ui horizontal divider">ご本人について</div>
 
@@ -129,8 +129,8 @@
                                     <p>例：1990年01月01日</p>
                                     <div th:classappend="${errors.hasError('dateOfBirth')} ? 'error'">
                                         <div class="field">
-                                            年
-                                        <select name="select" >
+                                            　　　年　　　　　　月　　　　　日</br>
+                                        <select name="select", style="width:90px;display:inline;" >
                                             <option value="">--</option>
                                             <option value="1900">1900</option>
                                             <option value="1901">1901</option>
@@ -254,10 +254,10 @@
                                             <option value="2019">2019</option>
                                             <option value="2020">2020</option>
                                         </select>
-                                        </div>
-                                        <div class="field">
-                                            月
-                                        <SELECT name="month">
+                                        <!--</div>
+                                        <div class="field">-->
+
+                                        <SELECT name="month", style="width:80px;display:inline;">
                                             <option value="">--</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -272,11 +272,11 @@
                                             <option value="11">11</option>
                                             <option value="12">12</option>
                                         </SELECT>
-                                        </div>
+                                        <!--</div>
 
-                                        <div class="field">
-                                            日
-                                        <SELECT name="day" >
+                                        <div class="field">-->
+
+                                        <SELECT name="day", style="width:80px;display:inline;" >
                                             <option value="">--</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -573,17 +573,15 @@
 
                         <div class="ui column grid">
                             <div class="eight wide column left aligned">
-                                <button class="ui teal button angle　left icon">次へ（お勤め先情報の入力）</button>
-                            </div>
-                            <p>   </p>
-                            <div class="eight wide column left aligned">
 
                                 <!--/*戻る場合、formの送り先を強制的に書き換える*/-->
                                 <button class="ui button angle left icon"
                                         onclick="form.action='/action/order/backToAccept';return true">戻る（入力情報の初期化）
                                 </button>
                             </div>
-
+                            <div class="eight wide column right aligned">
+                                <button class="ui teal button angle right icon">完了</button>
+                            </div>
                         </div>
                     </form>
                 </div>
