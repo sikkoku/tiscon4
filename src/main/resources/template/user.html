@@ -70,14 +70,20 @@
                                 </td>
                                 <td>
                                     <p>例：ティーアイエス　タロウ</p>
-
+                                    <div class="two fields">
                                             <div class="field" th:classappend="${errors.hasError('kanaName')} ? 'error'">
-                                                <input type="text" name="kanaName" th:value="${form.kanaName}"/>
+                                                <input type="text" name="kanaName" placeholder="ティーアイエス" th:value="${form.kanaName}"/>
                                                 <p th:if="${errors.hasError('kanaName')}"
                                                 th:text="${errors.getMessage('kanaName')}" class="error-message">
                                                 </p>
                                             </div>
-
+                                            <div class="field" th:classappend="${errors.hasError('kanaName')} ? 'error'">
+                                                <input type="text" name="kanaName" placeholder="タロウ" th:value="${form.kanaName}"/>
+                                                <p th:if="${errors.hasError('kanaName')}"
+                                                   th:text="${errors.getMessage('kanaName')}" class="error-message">
+                                                </p>
+                                            </div>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -88,7 +94,7 @@
                                 <td>
                                     <p>例：TIS TAROU</p>
                                     <div class="field" th:classappend="${errors.hasError('alphabetName')} ? 'error'">
-                                        <input type="text" name="alphabetName" th:value="${form.alphabetName}"/>
+                                        <input type="text" name="alphabetName" placeholder="TIS TAROU" th:value="${form.alphabetName}"/>
                                         <p th:if="${errors.hasError('alphabetName')}"
                                            th:text="${errors.getMessage('alphabetName')}" class="error-message">
                                         </p>
@@ -123,7 +129,7 @@
                                     <p>例：1990年01月01日</p>
                                     <div th:classappend="${errors.hasError('dateOfBirth')} ? 'error'">
                                         <div class="field">
-                                            年
+                                            年             月　　　　　　　日
                                         <select name="select" >
                                             <option value="">--</option>
                                             <option value="1900">1900</option>
@@ -250,7 +256,7 @@
                                         </select>
                                         </div>
                                         <div class="field">
-                                            月
+
                                         <SELECT name="month">
                                             <option value="">--</option>
                                             <option value="1">1</option>
@@ -269,7 +275,7 @@
                                         </div>
 
                                         <div class="field">
-                                            日
+
                                         <SELECT name="day" >
                                             <option value="">--</option>
                                             <option value="1">1</option>
